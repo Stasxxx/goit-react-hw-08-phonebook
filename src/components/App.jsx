@@ -1,16 +1,17 @@
+import { Routes,Route } from "react-router-dom";
+import { RegisterForm } from "components/RegisterForm/RegisterForm";
+import { LogIn } from "./LogIn/LogIn";
+import { ContactsList } from "./ContactsList/ContactsList";
+import { Layout } from "./Layout";
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/contacts" element={<ContactsList />} />
+        <Route path="/login" element={<LogIn />} />
+      </Route>
+    </Routes>
   );
 };
