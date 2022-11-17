@@ -10,7 +10,6 @@ export const ContactForm = () => {
     
     const dispatch = useDispatch();
     const visibleContacts = useSelector(selectVisibleFilter);
-    console.log(visibleContacts)
     const delContact = contactId => {
         dispatch(deleteContact(contactId))
     };

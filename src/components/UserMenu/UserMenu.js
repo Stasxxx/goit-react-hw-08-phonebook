@@ -5,7 +5,7 @@ import { useAuth } from 'hooks';
 export const UserMenu = () => {
     const dispatch = useDispatch();
     const { user } = useAuth();
-    console.log(user)
+    
     return (
         <div>
             <p>Welcom, {user.name}</p>
