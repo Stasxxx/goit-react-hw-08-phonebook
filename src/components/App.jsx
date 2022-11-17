@@ -1,7 +1,7 @@
 import { Routes,Route } from "react-router-dom";
 import { RegisterForm } from "components/RegisterForm/RegisterForm";
 import { LogIn } from "./LogIn/LogIn";
-import { ContactsList } from "./ContactsList/ContactsList";
+import { Contacts } from "pages/Contacts";
 import { Layout } from "./Layout";
 import { PrivateRoute } from "./PrivateRoute";
 
@@ -12,7 +12,7 @@ export const App = () => {
         <Route path="/register" element={<RegisterForm />} />
         
         <Route path="/login" element={<LogIn />} />
-        <Route path="/contacts" element={<PrivateRoute redirectTo="/login" component={<ContactsList />} />} />
+        <Route path="/contacts" element={<PrivateRoute redirectTo="/login" component={<Contacts />} />} />
       </Route>
     </Routes>
   );
