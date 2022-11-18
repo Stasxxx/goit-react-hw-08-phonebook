@@ -15,33 +15,31 @@ const schema = yup.object().shape({
 export const RegisterForm = () => {
     const dispatch = useDispatch();
 
-    const handleSubmitForm = (values, {resetForm}) => {
-       dispatch(register(values));
-       resetForm();
-}
+    const handleSubmitForm = (values, { resetForm }) => {
+        dispatch(register(values));
+        resetForm();
+    }
 
     return (
-        
         <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={schema} onSubmit={handleSubmitForm}>
             <Form>
                 <label htmlFor="username">
                     Username
                     <Field id="username" tape="text" name="name" placeholder="name" />
-                    <ErrorMessage name="name"/>
+                    <ErrorMessage name="name" />
                 </label>
                 <label htmlFor="email">
                     Email
                     <Field id="email" type="email" name="email" placeholder="email" />
-                    <ErrorMessage name="email"/>
+                    <ErrorMessage name="email" />
                 </label>
                 <label htmlFor="password" >
                     Password
                     <Field id="password" type="password" name="password" placeholder="password" />
-                    <ErrorMessage name="password"/>
+                    <ErrorMessage name="password" />
                 </label>
-                    <button type="submit">Register</button>
+                <button type="submit">Register</button>
             </Form>
         </Formik>
-        
-    )
-}
+    );
+};

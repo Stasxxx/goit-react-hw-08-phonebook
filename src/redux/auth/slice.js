@@ -30,7 +30,15 @@ const pandingRefreshing = state => {
     state.isRefreshing = true;
 };
 
+const fulfilledRefreshing = (state, action) => {
+    state.user = action.payload;
+    state.isLoggedIn = true;
+    state.isRefreshing = true;
+};
 
+const rejectedRefreshing = state => {
+    state.isRefreshing = false;
+}
 const authSlice = createSlice({
     name: 'auth',
     initialState,
@@ -39,7 +47,9 @@ const authSlice = createSlice({
             .addCase(register.fulfilled, addRegister)
             .addCase(logIn.fulfilled, addLogIn)
             .addCase(logOut.fulfilled, addlogout)
-            .addCase(refreshUser.pending,pandingRefreshing)
+            .addCase(refreshUser.pending, pandingRefreshing)
+            .addCase(refreshUser.fulfilled, fulfilledRefreshing)
+            .addCase(refreshUser.rejected, rejectedRefreshing)
 });
 
 export const authReducer = authSlice.reducer;

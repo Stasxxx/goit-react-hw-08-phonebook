@@ -6,10 +6,11 @@ import { useAuth } from "hooks";
 
 export const AppBar = () => {
     const { isLoggedIn } = useAuth();
+
     return (
         <Header>
-            <Navigation/>
-            { isLoggedIn ? <UserMenu/> : <AuthNav/>}
+            <Navigation />
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Header>
-    )
-}
+    );
+};
