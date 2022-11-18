@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-padding: 20px;
+display: flex;
 `;
 
-export const Title = styled.h1`
-text-align: center;
+export const Name = styled.p`
+font-weight: 700;
+margin-right: 10px;
 `
