@@ -1,6 +1,9 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "redux/auth/operations";
+import { ButtonMUI, Label, Input, Container, Div } from "./RegisterForm.styled";
+import Tooltip from "@mui/material/Tooltip";
+import SendIcon from '@mui/icons-material/Send';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
@@ -23,22 +26,29 @@ export const RegisterForm = () => {
     return (
         <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={schema} onSubmit={handleSubmitForm}>
             <Form>
-                <label htmlFor="username">
-                    Username
-                    <Field id="username" tape="text" name="name" placeholder="name" />
-                    <ErrorMessage name="name" />
-                </label>
-                <label htmlFor="email">
-                    Email
-                    <Field id="email" type="email" name="email" placeholder="email" />
-                    <ErrorMessage name="email" />
-                </label>
-                <label htmlFor="password" >
-                    Password
-                    <Field id="password" type="password" name="password" placeholder="password" />
-                    <ErrorMessage name="password" />
-                </label>
-                <button type="submit">Register</button>
+                <Container>
+                    <Label htmlFor="username">
+                        Username
+                        <Input id="username" tape="text" name="name" placeholder="name" />
+                        <ErrorMessage name="name" />
+                    </Label>
+                    <Label htmlFor="email">
+                        Email
+                        <Input id="email" type="email" name="email" placeholder="email" />
+                        <ErrorMessage name="email" />
+                    </Label>
+                    <Label htmlFor="password" >
+                        Password
+                        <Input id="password" type="password" name="password" placeholder="password" />
+                        <ErrorMessage name="password" />
+                    </Label>
+                </Container>
+                <Div>
+                    <Tooltip >
+                        <ButtonMUI ButtonMUI type="submit" variant="contained" color="primary" endIcon={<SendIcon />}>Register</ButtonMUI>
+                    </Tooltip>
+                </Div>
+                {/* <button type="submit">Register</button> */}
             </Form>
         </Formik>
     );
