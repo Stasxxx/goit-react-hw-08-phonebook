@@ -1,8 +1,10 @@
-import { Div, Label, Input, Button } from "./Form.styled"
+import { Div, Label, Input, ButtonMUI } from "./Form.styled"
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector, } from "react-redux";
 import { addContact } from "redux/contacts/operations";
 import { selectContacts } from "redux/contacts/selectors"; 
+import Tooltip from "@mui/material/Tooltip";
+
     
 const nameInputId = nanoid();
 const numberInputId = nanoid();
@@ -53,7 +55,10 @@ export const Form = () => {
                 required
             />
             </Label>
-            <Button type="submit">Add contact</Button>
+                {/* <Button type="submit">Add contact</Button> */}
+            <Tooltip >
+                <ButtonMUI type="submit" variant="contained" color="primary" sx={{ ml: 10 }}>Add contact</ButtonMUI>
+            </Tooltip>
         </form>
         </Div>
     )

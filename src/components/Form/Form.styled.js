@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import Button from '@mui/material/Button';
 
 export const Div = styled.div`
 margin-left: auto;
 margin-right: auto;
-    width:310px;
+width:310px;
 `;
 
 export const Label = styled.label`
@@ -39,30 +40,28 @@ export const Input = styled.input`
     }
 `;
 
-export const Button = styled.button`
-    width: 100px;
+export const ButtonMUI = styled(Button)`
+    width: 150px;
     height: 30px;
-    background: #87CEFA;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    /* background: #87CEFA; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: 0;
-    display: block;
-    margin-left: 100px;
-    /* margin-left: auto;
-    margin-right: auto; */
+    display: flex; */
+    /* margin-left: 150px;
 
     font-family: inherit;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.4px;
     text-align: center;
-    letter-spacing: 0.06em;
-    color: #FFFFFF;
-    cursor: pointer;
+    letter-spacing: 0.06em; */
+    /* color: #FFFFFF;
+    cursor: pointer; */
 
-    &:hover,
+    /* &:hover,
     &:focus {
-        background: #188CE8;
+        background: red;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    }
+    } */
 `

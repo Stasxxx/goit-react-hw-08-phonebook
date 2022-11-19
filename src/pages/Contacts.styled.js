@@ -4,6 +4,6 @@ export const Container = styled.div`
 padding: 20px;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
 text-align: center;
 `
