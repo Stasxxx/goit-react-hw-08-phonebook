@@ -59,7 +59,7 @@ export const Form = () => {
                 </InputDiv>
                 <InputBtn>
                     <Tooltip >
-                        <ButtonMUI type="submit" variant="contained" color="primary" >Add contact</ButtonMUI>
+                        <ButtonMUI type="submit" variant="contained" color="primary" sx={{font: 'inherit'}} >Add contact</ButtonMUI>
                     </Tooltip>
                 </InputBtn>
             </form>

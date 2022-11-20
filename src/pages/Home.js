@@ -1,7 +1,7 @@
 import { useAuth } from "hooks/useAuth";
 import { Greeting, Title } from "./Home.styled";
 
-export const Home = () => {
+export default function Home () {
     const { user } = useAuth();
     return (
         <Greeting>

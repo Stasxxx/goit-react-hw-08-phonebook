@@ -12,7 +12,7 @@ export const UserMenu = () => {
         <Container>
             <Name>Welcom, {user.name}</Name>
             <Tooltip >
-                <ButtonMUI type="button" onClick={() => dispatch(logOut())} variant="contained" color="primary" sx={{ ml: 2, mt: 1 }}>Logout</ButtonMUI>
+                <ButtonMUI type="button" onClick={() => dispatch(logOut())} variant="contained" color="primary" sx={{ ml: 2, mt: 1, font: 'inherit' }}>Logout</ButtonMUI>
             </Tooltip>
         </Container>
     )

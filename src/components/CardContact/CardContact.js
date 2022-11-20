@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container, ButtonMUI, ContactName } from "./CardContact.styled";
 import { deleteContact } from "redux/contacts/operations";
 import { useDispatch } from "react-redux";
@@ -15,8 +16,14 @@ export const CardContact = ({ id, name, number }) => {
         <Container>
             <ContactName>{name}: {number}</ContactName>
             <Tooltip >
-                <ButtonMUI type="button" onClick={delContact} variant="outlined" color="secondary" startIcon={<DeleteIcon />}>Delete</ButtonMUI>
+                <ButtonMUI type="button" onClick={delContact} variant="outlined" color="secondary" sx={{font: 'inherit'}} startIcon={<DeleteIcon />}>Delete</ButtonMUI>
             </Tooltip>
         </Container>
     )
+}
+
+CardContact.propType = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
 }

@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "redux/auth/operations";
 import { ButtonMUI, Label, Input, Container, Div } from "./RegisterForm.styled";
@@ -45,10 +45,9 @@ export const RegisterForm = () => {
                 </Container>
                 <Div>
                     <Tooltip >
-                        <ButtonMUI type="submit" variant="contained" color="primary" endIcon={<SendIcon />}>Register</ButtonMUI>
+                        <ButtonMUI type="submit" variant="contained" color="primary" sx={{font: 'inherit'}} endIcon={<SendIcon />}>Register</ButtonMUI>
                     </Tooltip>
                 </Div>
-                {/* <button type="submit">Register</button> */}
             </Form>
         </Formik>
     );

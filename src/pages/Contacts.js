@@ -4,12 +4,12 @@ import { Form } from "components/Form/Form";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SectionTitle } from "components/SectionTitle/SectionTitle";
-import { Container, ContactList } from "./Contacts.styled";
+import { Container, ContactList, NoContacts } from "./Contacts.styled";
 import { fetchContacts } from "redux/contacts/operations";
 import { selectIsLoading, selectError, selectContacts } from "redux/contacts/selectors";
+import { Helmet } from "react-helmet";
 
-
-export const Contacts = () => {
+export default function Contacts () {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -19,11 +19,16 @@ export const Contacts = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
    
-    return (
+  return (
+      <>
+      <Helmet>
+        <title>Your contacts</title>
+      </Helmet>
+      
       <Container>
         <SectionTitle title="Phonebook"/>
         <Form />
-        {contacts.length === 0 ? <p>Ther is no contacts</p> :
+        {contacts.length === 0 ? <NoContacts>There is no contacts!</NoContacts> :
           <ContactList>
             <SectionTitle title="Contacts"/>
             <Filter />
@@ -32,6 +37,6 @@ export const Contacts = () => {
           </ContactList>
         }
       </Container>
-        
+      </>  
     );
 };

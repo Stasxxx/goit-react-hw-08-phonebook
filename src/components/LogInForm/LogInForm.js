@@ -1,7 +1,7 @@
 import { Form, Formik, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { logIn } from "redux/auth/operations";
-import { ButtonMUI, Label,Container, Input, Div } from "./LogIn.styled";
+import { ButtonMUI, Label,Container, Input, Div } from "./LogInForm.styled";
 import Tooltip from "@mui/material/Tooltip";
 import SendIcon from '@mui/icons-material/Send';
 import * as yup from 'yup';
@@ -12,7 +12,7 @@ const schema = yup.object().shape({
 });
 
 
-export const LogIn = () => {
+export const LoginForm = () => {
     const dispatch = useDispatch()
     const handleSubmitForm = (values, {resetForm}) => {
        dispatch(logIn(values));
@@ -35,7 +35,7 @@ export const LogIn = () => {
                 </Container>
                 <Div>
             <Tooltip >
-                    <ButtonMUI type="submit" variant="contained" color="primary" endIcon={<SendIcon />}>Log In</ButtonMUI>
+                    <ButtonMUI type="submit" variant="contained" color="primary" sx={{font: 'inherit'}} endIcon={<SendIcon />}>Log In</ButtonMUI>
             </Tooltip>
                 </Div>
             </Form>
