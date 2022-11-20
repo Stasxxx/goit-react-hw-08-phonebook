@@ -11,7 +11,7 @@ margin-right: 10px;
 `
 
 export const ButtonMUI = styled(Button)`
-    width: 100px;
-    height: 30px;
+width: 100px;
+height: 30px;
     
 `

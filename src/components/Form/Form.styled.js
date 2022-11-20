@@ -1,21 +1,25 @@
 import styled from "styled-components";
 import Button from '@mui/material/Button';
 
-export const Div = styled.div`
-margin-left: auto;
-margin-right: auto;
-width:310px;
+export const FormContainer = styled.div`
+display: flex;
+justify-content: center;
 `;
 
+export const InputDiv = styled.div`
+/* margin-bottom: 20px; */
+`
+
 export const Label = styled.label`
-    display: block;
     font-size: 20px;
     line-height: 1.17;
     letter-spacing: 0.01em;
     color: #757575;
-    margin-bottom: 15px;
-    /* text-align: center; */
     cursor: pointer;
+    
+    &:last-child {
+        margin-left: 10px;
+    }
     
 `;
 
@@ -28,7 +32,7 @@ export const Input = styled.input`
     padding-left: 15px;
     outline: none;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 10px;
+    margin-left: 5px;
     &:hover,
     &:focus {
         border: 1px solid #2196F3;
@@ -40,28 +44,13 @@ export const Input = styled.input`
     }
 `;
 
+export const InputBtn = styled.div`
+margin-top:30px;
+display: flex;
+justify-content: center;
+`;
+
 export const ButtonMUI = styled(Button)`
     width: 150px;
     height: 30px;
-    /* background: #87CEFA; */
-    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    border: 0;
-    display: flex; */
-    /* margin-left: 150px;
-
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.4px;
-    text-align: center;
-    letter-spacing: 0.06em; */
-    /* color: #FFFFFF;
-    cursor: pointer; */
-
-    /* &:hover,
-    &:focus {
-        background: red;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    } */
-`
+`;

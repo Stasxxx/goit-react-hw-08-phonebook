@@ -1,7 +1,8 @@
-import { Container, Button } from "./CardContact.styled";
+import { Container, ButtonMUI, ContactName } from "./CardContact.styled";
 import { deleteContact } from "redux/contacts/operations";
 import { useDispatch } from "react-redux";
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import Tooltip from "@mui/material/Tooltip";
 
 export const CardContact = ({ id, name, number }) => {
     const dispatch = useDispatch();
@@ -12,8 +13,10 @@ export const CardContact = ({ id, name, number }) => {
 
     return (
         <Container>
-            <div>{name}: {number}</div>
-            <Button type="button" onClick={delContact}>Delete</Button>
+            <ContactName>{name}: {number}</ContactName>
+            <Tooltip >
+                <ButtonMUI type="button" onClick={delContact} variant="outlined" color="secondary" startIcon={<DeleteIcon />}>Delete</ButtonMUI>
+            </Tooltip>
         </Container>
     )
 }

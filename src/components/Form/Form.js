@@ -1,4 +1,4 @@
-import { Div, Label, Input, ButtonMUI } from "./Form.styled"
+import { FormContainer, Label, Input, ButtonMUI, InputDiv, InputBtn } from "./Form.styled"
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector, } from "react-redux";
 import { addContact } from "redux/contacts/operations";
@@ -30,37 +30,40 @@ export const Form = () => {
     };
 
     return (
-        <Div>
+        <FormContainer>
             <form onSubmit={handleSubmit}>
-            <Label htmlFor={nameInputId}>
-                Name
-                <Input
-                id = {nameInputId}
-                type="text"
-                name="name"
-                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-                required
-                
-            />
-            </Label>
-            <Label htmlFor={numberInputId}>
-                Number
-                <Input
-                id={numberInputId}
-                type="tel"
-                name="number"
-                pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-                required
-            />
-            </Label>
-                {/* <Button type="submit">Add contact</Button> */}
-            <Tooltip >
-                <ButtonMUI type="submit" variant="contained" color="primary" sx={{ ml: 10 }}>Add contact</ButtonMUI>
-            </Tooltip>
-        </form>
-        </Div>
+                <InputDiv>
+                    <Label htmlFor={nameInputId}>
+                        Name
+                        <Input
+                        id = {nameInputId}
+                        type="text"
+                        name="name"
+                        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                        required
+                        
+                    />
+                    </Label>
+                    <Label htmlFor={numberInputId}>
+                        Number
+                        <Input
+                        id={numberInputId}
+                        type="tel"
+                        name="number"
+                        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                        required
+                    />
+                    </Label>
+                </InputDiv>
+                <InputBtn>
+                    <Tooltip >
+                        <ButtonMUI type="submit" variant="contained" color="primary" >Add contact</ButtonMUI>
+                    </Tooltip>
+                </InputBtn>
+            </form>
+        </FormContainer>
     )
     
 }

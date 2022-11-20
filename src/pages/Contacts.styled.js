@@ -4,6 +4,7 @@ export const Container = styled.div`
 padding: 20px;
 `;
 
-export const Title = styled.h2`
-text-align: center;
+export const ContactList = styled.section`
+margin-left: auto;
+margin-right: auto;
 `

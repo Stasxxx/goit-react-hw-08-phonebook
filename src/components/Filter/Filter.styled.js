@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const Div = styled.div`
-    width:310px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width:310px;
 `
 export const Label = styled.label`
     display: block;
@@ -10,7 +13,6 @@ export const Label = styled.label`
     letter-spacing: 0.01em;
     color: #757575;
     margin-bottom: 15px;
-    /* text-align: center; */
     cursor: pointer;
     
 `;

@@ -45,7 +45,7 @@ export const RegisterForm = () => {
                 </Container>
                 <Div>
                     <Tooltip >
-                        <ButtonMUI ButtonMUI type="submit" variant="contained" color="primary" endIcon={<SendIcon />}>Register</ButtonMUI>
+                        <ButtonMUI type="submit" variant="contained" color="primary" endIcon={<SendIcon />}>Register</ButtonMUI>
                     </Tooltip>
                 </Div>
                 {/* <button type="submit">Register</button> */}

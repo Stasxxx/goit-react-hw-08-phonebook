@@ -3,7 +3,8 @@ import { Filter } from "components/Filter/Filter";
 import { Form } from "components/Form/Form";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Container, Title } from "./Contacts.styled";
+import { SectionTitle } from "components/SectionTitle/SectionTitle";
+import { Container, ContactList } from "./Contacts.styled";
 import { fetchContacts } from "redux/contacts/operations";
 import { selectIsLoading, selectError, selectContacts } from "redux/contacts/selectors";
 
@@ -20,15 +21,15 @@ export const Contacts = () => {
    
     return (
       <Container>
-        <Title>Phonebook</Title>
+        <SectionTitle title="Phonebook"/>
         <Form />
         {contacts.length === 0 ? <p>Ther is no contacts</p> :
-          <>
-          <h3>Contacts</h3>
-          <Filter />
-          {isLoading && !error && <b>Request in  progress...</b>}
-          <ContactForm />
-          </>
+          <ContactList>
+            <SectionTitle title="Contacts"/>
+            <Filter />
+            {isLoading && !error && <b>Request in  progress...</b>}
+            <ContactForm />
+          </ContactList>
         }
       </Container>
         

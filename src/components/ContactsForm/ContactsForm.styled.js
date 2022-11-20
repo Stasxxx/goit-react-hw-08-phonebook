@@ -2,10 +2,16 @@ import styled from "styled-components";
 
 
 export const List = styled.ul`
-width: 350px;
-margin-bottom: 10px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+list-style: none;
+
 `;
 
 export const Item = styled.li`
-margin-bottom: 10px;
+flex-basis: calc((100% - 30px) / 3)
+/* padding: 10px; */
+/* border-radius: 4px; */
 `;

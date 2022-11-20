@@ -11,11 +11,8 @@ export const UserMenu = () => {
     return (
         <Container>
             <Name>Welcom, {user.name}</Name>
-            {/* <button type="button" onClick={() => dispatch(logOut())}>
-                Logout
-            </button> */}
             <Tooltip >
-                    <ButtonMUI type="button" onClick={() => dispatch(logOut())} variant="contained" color="primary" sx={{ ml: 10, mt: 1 }}>Logout</ButtonMUI>
+                <ButtonMUI type="button" onClick={() => dispatch(logOut())} variant="contained" color="primary" sx={{ ml: 2, mt: 1 }}>Logout</ButtonMUI>
             </Tooltip>
         </Container>
     )
